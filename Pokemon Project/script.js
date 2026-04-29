@@ -51,7 +51,7 @@ function createPokemon(data) {
     ...p,
     hit(target) {
       const dmg = calculateDamage(this);
-      target.health = Math.max(0, target.health - dmg);
+      targetn.health = Math.max(0, target.health - dmg);
       return dmg;
     }
   };
@@ -82,7 +82,7 @@ const centerDiv = document.getElementById("center-card");
 
 // ===== POPULATE DROPDOWNS =====
 async function populatePokemonDropdowns() {
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
+  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000");
   const data = await res.json();
 
   data.results.forEach(pokemon => {
